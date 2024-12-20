@@ -1,0 +1,106 @@
+@font-face {
+    font-family: lalehzar;
+    src: url('../fonts/Lalezar-Regular.ttf');
+}
+body{
+    text-align: right;
+    font-family: 'lalehzar' ;
+    background-color: #e9e9e9;
+}
+
+.title{text-align: center;}
+.addlistBox{display: flex;justify-content: center;margin: 20px auto;}
+.task-input{ max-width: 400px;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border-radius: 20px;
+    border:none;
+    background-color: #1b1b1b;
+    color: #fff;
+}
+.task-input-btn:disabled{ background-color: #999999;}
+.task-input-btn{
+    border-radius: 20px;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0px;
+    color: #000;
+    right: -41px;
+    padding: 17px;
+    border: none;
+    background-color: #32ff54;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.task-input-btn-remove{
+    border-radius: 20px;
+    height: 20px;
+    position: relative;
+    top: 0px;
+    color: #ffffff;
+    left: -23px;
+    padding: 17px;
+    border: none;
+    background-color: #ff0c39;
+    z-index: 100;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-family: 'lalehzar';
+}
+.addlistBox-container{position: relative;}
+.completed{
+    background-color: #32ff54!important;
+    color: #000!important;
+    text-decoration: line-through;
+    transition:all 400ms ease-in-out ;
+}
+.listItems-wrapper{
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+.listItems{
+    list-style: none;
+    display: block;
+    border-radius: 20px;
+    margin: 50px auto;
+    padding: 0;
+}
+.listItems li{
+    padding: 2px 20px;
+    line-height: 2;
+    background-color: #1b1b1b;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.removeItem-btn{background: none;border: none;cursor: pointer;}
+.search-bar{
+    position: relative;
+    font-family: lalehzar;
+    bottom: -50px;
+    border-radius: 15px 15px 0px 0px;
+    max-width: 400px;
+    width: 100%;
+    display: block;
+    padding: 10px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    outline: 0;
+    font-size: 15px;
+    font-weight: 200;
+}
+.search-bar:not(:focus){
+    color: #fff;
+}
