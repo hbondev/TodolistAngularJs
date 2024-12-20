@@ -1,21 +1,40 @@
-<!DOCTYPE html>
-<html lang="en" dir="rtl">
+<!DOCTYPE html >
+<html lang="en" dir="rtl"  ng-app="todoApp">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todolist</title>
     <link rel="stylesheet" href="./src/styles/main.css">
-    <script src="/src/js/angular.js"></script>
-    <script src="https://kit.fontawesome.com/9db2e55503.js" crossorigin="anonymous"></script>
+    <script src="./src/js/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+
 
 </head>
-<body ng-app="todo">
-  <form ng-submit="">
-    <input type="text" placeholder="add task">
-    <button>Add</button>
-  </form>  
-    <input type="text" placeholder="Search your task ... ">
-  <button>Remove All Completed</button>
+<body ng-controller="todoController">
+  <div >
+    <h1>TodoApp</h1>
+    <form ng-submit="addTodo()">
+      <input type="text" placeholder="add task"ng-model="newTodoText">
+      <button>Add</button>
+    </form>  
+      <input type="text" placeholder="Search your task ... " ng-model="searchText">
+      <button ng-click="deleteCompletedTodos()">Delete Completed</button>
+
+
+
+    <div>
+      <ul>
+        <li ng-repeat="todo in todos | filter: searchText">
+            <input type="checkbox" ng-model="todo.completed">
+            <span ng-class="{completed: todo.completed}">{{ todo.text }}</span>
+            <button ng-click="deleteTodo($index)">Delete</button>
+        </li>
+    </ul>
+
+    </div>
+  </div>
+ 
+
  <script src="./src/js/app.js"></script>
 
 </body>
