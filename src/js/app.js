@@ -1,5 +1,5 @@
-let mytodo = angular.module("todo", [$ngStorage]);
-mytodo.controller("todoController", function ($scope, $localStorage) {
+angular.module("todoApp", ['ngStorage']).controller("todoController", function ($scope, $localStorage) {
+  $scope.todos = $localStorage.todos || [];
   $scope.$watch(
     "todos",
     function () {
