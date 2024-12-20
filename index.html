@@ -10,7 +10,7 @@
     <div ng-controller="todofunc">
       <form >
         <input type="text" ng-model="userInput" name="" id="">
-        <button ng-click="add()">+</button>
+        <button ng-click="add()"ng-disabled="!userInput">+</button>
 
 
       </form>
